@@ -1,0 +1,1 @@
+export default function CareerSection(){return <section className="section"><h2 className="text-3xl font-semibold mb-8">Career Timeline</h2><div className="space-y-4"><article className="glow-card p-6">SQI SOFT · Development Manager (2024.03 — 2026.05)</article><article className="glow-card p-6">NTSYS · Full Stack Developer (2015.12 — 2023.05)</article></div></section>;}

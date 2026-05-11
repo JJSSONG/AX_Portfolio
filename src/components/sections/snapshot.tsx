@@ -1,0 +1,2 @@
+import { snapshotMetrics } from "@/lib/constants";
+export default function SnapshotSection(){return <section className="section pt-0"><div className="grid md:grid-cols-4 gap-4">{snapshotMetrics.map((m)=> <article key={m.label} className="glow-card p-6 hover:-translate-y-1 transition"><p className="text-2xl font-semibold">{m.value}</p><p className="text-zinc-400 mt-2">{m.label}</p></article>)}</div></section>;}

@@ -1,0 +1,1 @@
+export default function PhilosophySection(){return <section className="section"><h2 className="text-3xl font-semibold mb-8">Engineering Philosophy</h2><blockquote className="text-2xl text-zinc-200 leading-relaxed border-l-2 border-cyan-400/60 pl-6">좋은 시스템은 단순히 동작하는 시스템이 아니라, 유지보수 가능하고 확장 가능해야 한다고 생각합니다.</blockquote></section>;}

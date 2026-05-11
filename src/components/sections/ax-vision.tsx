@@ -1,0 +1,1 @@
+export default function AXVisionSection(){return <section className="section"><div className="glow-card p-10"><h2 className="text-3xl font-semibold mb-6">AX Vision</h2><p className="text-zinc-300 leading-8">현재는 AI 기반 Workflow Automation과 개발 생산성 향상 방향에 관심을 가지고 있습니다. 향후에는 AX Engineer 및 Technical PM 방향으로 비즈니스와 기술을 연결할 수 있는 역할로 성장하고자 합니다.</p></div></section>;}

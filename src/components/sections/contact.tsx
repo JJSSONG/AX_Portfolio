@@ -1,0 +1,1 @@
+export default function ContactSection(){return <section className="section"><div className="glow-card p-10 text-center"><h2 className="text-3xl font-semibold mb-4">Contact</h2><p className="text-zinc-300">새로운 기술과 더 나은 시스템 구조를 고민하며, AI·AX 시대에 맞는 엔터프라이즈 엔지니어로 성장하고 있습니다.</p></div></section>;}
