@@ -1,5 +1,5 @@
 # Song Jeongseop Portfolio
-
+  
 ## Vercel 배포 체크리스트
 
 1. Node.js 20+ 사용 (Vercel Project Settings > General > Node.js Version)
