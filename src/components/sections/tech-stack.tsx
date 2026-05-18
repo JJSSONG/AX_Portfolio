@@ -12,10 +12,15 @@ export default function TechStackSection() {
       <div className="grid md:grid-cols-2 gap-4">
         {Object.entries(groups).map(([group, values]) => (
           <article key={group} className="glow-card p-6">
-            <h3 className="font-semibold text-lg mb-4">{group}</h3>
-            <div className="flex flex-wrap gap-2">
+            <h3 className="font-semibold text-lg mb-4 tracking-tight">{group}</h3>
+            <div className="flex flex-wrap gap-x-2 gap-y-3">
               {values.map((value) => (
-                <span key={value} className="px-3 py-1.5 rounded-full border border-white/15 text-sm text-zinc-200">{value}</span>
+                <span
+                  key={value}
+                  className="inline-flex items-center px-3 py-1.5 rounded-full border border-white/15 text-sm text-zinc-200 whitespace-nowrap"
+                >
+                  {value}
+                </span>
               ))}
             </div>
           </article>
