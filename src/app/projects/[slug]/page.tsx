@@ -2,10 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/constants";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
-export default function ProjectDetailPage({ params }: Props) {
-  const project = projects.find((item) => item.slug === params.slug);
+export default async function ProjectDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
   if (!project) return notFound();
 
   return (
