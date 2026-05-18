@@ -20,8 +20,8 @@ export default function HeroSection() {
             현재는 AI 기반 Workflow Automation과 생산성 확장을 연구하고 있습니다.
           </motion.p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <button className="px-6 py-3 rounded-xl bg-white text-black font-medium">View Projects</button>
-            <button className="px-6 py-3 rounded-xl border border-white/20 text-white hover:border-cyan-300">Download Resume</button>
+            <a href="#projects" className="px-6 py-3 rounded-xl bg-white text-black font-medium">View Projects</a>
+            <a href="/resume.pdf" download className="px-6 py-3 rounded-xl border border-white/20 text-white hover:border-cyan-300">Download Resume</a>
           </div>
         </div>
         <div className="relative h-[480px]">
