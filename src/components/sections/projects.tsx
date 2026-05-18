@@ -1,22 +1,27 @@
-const projects = [
-  ["KT Group MA System", "2024.03 — 2026.05", "조회 50초 → 3초, 업무시간 80% 단축"],
-  ["OURHOME Smart Factory", "2023.01 — 2023.05", "산업용 단말 최적화 반응형 UI 구축"],
-  ["Direct Selling Mutual Aid Association", "2021 — 2023", "레거시 전환 및 운영 안정성 개선"],
-  ["Free Home Collection Service", "2021 — 2022", "공공 예약/통계 프로세스 구축"]
-] as const;
+import Link from "next/link";
+import { projects } from "@/lib/constants";
 
 export default function ProjectsSection() {
   return (
-    <section className="section">
+    <section className="section" id="projects">
       <h2 className="section-title mb-8">Featured Projects</h2>
       <div className="grid lg:grid-cols-2 gap-4">
-        {projects.map(([name, period, result], i) => (
-          <article key={name} className={`glow-card p-8 ${i === 0 ? "lg:col-span-2" : ""}`}>
+        {projects.map((project, i) => (
+          <article key={project.slug} className={`glow-card p-8 ${i === 0 ? "lg:col-span-2" : ""}`}>
             <div className="flex items-start justify-between gap-4">
-              <h3 className="text-2xl font-semibold">{name}</h3>
-              <span className="text-sm text-zinc-400">{period}</span>
+              <h3 className="text-2xl font-semibold">{project.name}</h3>
+              <span className="text-sm text-zinc-400">{project.period}</span>
             </div>
-            <p className="text-zinc-300 mt-4">{result}</p>
+            <p className="text-zinc-300 mt-4">{project.summary}</p>
+            <div className="mt-5 flex items-center justify-between gap-4">
+              <p className="text-sm text-zinc-400 line-clamp-1">{project.achievements[0]}</p>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="px-4 py-2 rounded-lg border border-white/20 hover:border-cyan-300 text-sm"
+              >
+                상세 보기
+              </Link>
+            </div>
           </article>
         ))}
       </div>
