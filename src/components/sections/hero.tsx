@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center">
-      <div className="section grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center">
+      <div className="section grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-center pt-24 md:pt-28">
         <motion.aside
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          className="glow-card p-5 md:p-6 max-w-[360px] w-full mx-auto lg:mx-0"
+          className="glow-card p-5 md:p-6 max-w-[320px] md:max-w-[360px] w-full mx-auto lg:mx-0"
         >
           <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-black/20">
             <Image src="/photo.jpg" alt="Song Jeongseop profile" fill className="object-cover" priority />
@@ -23,7 +23,7 @@ export default function HeroSection() {
           <dl className="mt-5 space-y-2 text-sm text-zinc-300">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <dt className="text-zinc-500">Birth</dt>
-              <dd>1990.04.08</dd>
+              <dd>1997.10.31</dd>
             </div>
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <dt className="text-zinc-500">Experience</dt>
