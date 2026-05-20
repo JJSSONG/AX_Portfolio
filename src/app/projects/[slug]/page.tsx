@@ -66,11 +66,11 @@ export default async function ProjectDetailPage({ params }: Props) {
             {project.stack.map((tech, idx) => (
               <span key={tech} className="inline-flex items-center">
                 {idx > 0 && (
-                  <span aria-hidden className="px-2 md:px-3 text-zinc-500">
+                  <span aria-hidden className="px-1 text-zinc-500">
                     /
                   </span>
                 )}
-                <span className="whitespace-nowrap">{tech}</span>
+                <span className="px-1 whitespace-nowrap">{tech}</span>
               </span>
             ))}
           </div>
