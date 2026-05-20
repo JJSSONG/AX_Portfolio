@@ -10,7 +10,7 @@ export default function ContactSection() {
         </p>
 
         <nav className="mt-8" aria-label="Contact links">
-          <ul className="flex justify-center items-center flex-wrap gap-y-2 text-zinc-500">
+          <ul className="flex justify-center items-center flex-nowrap whitespace-nowrap text-zinc-500">
             <li className="inline-flex items-center">
               <a href="https://github.com/JJSSONG" target="_blank" rel="noreferrer" className={linkClass}>
                 GitHub

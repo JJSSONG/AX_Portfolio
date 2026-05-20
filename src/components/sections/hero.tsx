@@ -50,7 +50,7 @@ export default function HeroSection() {
           </motion.p>
 
           <nav className="mt-10" aria-label="Primary actions">
-            <ul className="flex flex-wrap items-center gap-y-2 text-zinc-500">
+            <ul className="flex items-center flex-nowrap whitespace-nowrap text-zinc-500">
               <li className="inline-flex items-center">
                 <a href="#projects" className="inline-flex items-center px-3 py-1.5 text-sm md:text-base text-zinc-100 hover:text-cyan-300 transition-colors">
                   View Projects
