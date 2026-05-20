@@ -30,6 +30,30 @@ export default async function ProjectDetailPage({ params }: Props) {
           <p className="mt-6 text-zinc-200 text-lg leading-8 break-keep">{project.summary}</p>
           <p className="mt-4 text-zinc-300 leading-8 break-keep">{project.description}</p>
 
+          {"star" in project && project.star && (
+            <>
+              <h2 className="mt-10 text-2xl font-semibold tracking-tight">STAR Breakdown</h2>
+              <div className="mt-4 grid gap-3">
+                <article className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-xs uppercase tracking-[0.14em] text-cyan-300">Situation</p>
+                  <p className="mt-2 text-zinc-300 leading-7 break-keep">{project.star.situation}</p>
+                </article>
+                <article className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-xs uppercase tracking-[0.14em] text-cyan-300">Task</p>
+                  <p className="mt-2 text-zinc-300 leading-7 break-keep">{project.star.task}</p>
+                </article>
+                <article className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-xs uppercase tracking-[0.14em] text-cyan-300">Action</p>
+                  <p className="mt-2 text-zinc-300 leading-7 break-keep">{project.star.action}</p>
+                </article>
+                <article className="rounded-xl border border-white/10 bg-cyan-300/5 p-4">
+                  <p className="text-xs uppercase tracking-[0.14em] text-cyan-300">Result</p>
+                  <p className="mt-2 text-zinc-200 leading-7 break-keep">{project.star.result}</p>
+                </article>
+              </div>
+            </>
+          )}
+
           <h2 className="mt-10 text-2xl font-semibold tracking-tight">Key Achievements</h2>
           <ul className="mt-4 space-y-2 text-zinc-300 leading-7 list-disc list-inside break-keep">
             {project.achievements.map((point) => (
