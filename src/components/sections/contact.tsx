@@ -9,7 +9,7 @@ export default function ContactSection() {
         <div className="mt-8 flex justify-center gap-3 flex-wrap">
           <a href="https://github.com/JJSSONG" target="_blank" rel="noreferrer" className="px-5 py-2.5 rounded-lg border border-white/20 hover:border-cyan-300">GitHub</a>
           <a href="/resume.pdf" download className="px-5 py-2.5 rounded-lg border border-white/20 hover:border-cyan-300">Resume</a>
-          <a href="mailto:contact@example.com" className="px-5 py-2.5 rounded-lg bg-white text-black font-medium">Email</a>
+          <a href="mailto:sotrjs@gmail.com" className="px-5 py-2.5 rounded-lg bg-white text-black font-medium">Email</a>
         </div>
       </div>
     </section>

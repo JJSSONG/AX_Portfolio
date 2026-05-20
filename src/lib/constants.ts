@@ -7,6 +7,21 @@ export const snapshotMetrics = [
 
 export const projects = [
   {
+    slug: "enterprise-ax-automation-pipeline",
+    name: "Enterprise AX Automation Pipeline",
+    period: "2025.09 — 2026.05",
+    summary: "KT 운영 업무의 반복 모니터링·정산 보조 작업을 자동화한 AX 내부 도구 프로젝트",
+    description:
+      "LLM API, MCP 기반 도구 연동, Workflow Automation을 결합해 운영 이슈 요약·정산 데이터 검증·반복 리포트 생성을 자동화했습니다.",
+    achievements: [
+      "반복 운영 업무 리드타임 평균 60% 단축",
+      "운영 이슈 1차 분석/요약 자동화로 대응 속도 향상",
+      "정산 검증 체크리스트 자동 실행으로 휴먼에러 감소",
+      "AI 어시스턴트 기반 개발 생산성 파이프라인 구축"
+    ],
+    stack: ["OpenAI API", "MCP", "Python", "Workflow Automation", "Prompt Engineering", "REST API"]
+  },
+  {
     slug: "kt-group-ma-system",
     name: "KT Group MA System",
     period: "2024.03 — 2026.05",

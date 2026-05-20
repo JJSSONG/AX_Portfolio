@@ -6,6 +6,8 @@ export default function PhilosophySection() {
         <p className="text-2xl leading-relaxed text-zinc-100 border-l-2 border-cyan-300/70 pl-6">
           좋은 시스템은 단순히 동작하는 시스템이 아니라,
           유지보수 가능하고 확장 가능해야 한다고 생각합니다.
+          또한 엔터프라이즈 운영에서 축적한 안정성 기준에 AI 자동화를 결합해,
+          팀의 실행 속도와 품질을 함께 높이는 것이 시니어 엔지니어의 역할이라고 믿습니다.
         </p>
       </div>
     </section>
