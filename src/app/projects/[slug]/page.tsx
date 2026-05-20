@@ -62,13 +62,15 @@ export default async function ProjectDetailPage({ params }: Props) {
           </ul>
 
           <h2 className="mt-10 text-2xl font-semibold tracking-tight">Tech Stack</h2>
-          <div className="mt-4 flex flex-wrap gap-x-2 gap-y-3">
-            {project.stack.map((tech) => (
-              <span
-                key={tech}
-                className="inline-flex items-center px-3 py-1.5 rounded-full border border-white/15 text-sm text-zinc-200 whitespace-nowrap"
-              >
-                {tech}
+          <div className="mt-4 flex flex-wrap items-center text-sm md:text-base text-zinc-200 leading-8">
+            {project.stack.map((tech, idx) => (
+              <span key={tech} className="inline-flex items-center">
+                {idx > 0 && (
+                  <span aria-hidden className="px-2 md:px-3 text-zinc-500">
+                    /
+                  </span>
+                )}
+                <span className="whitespace-nowrap">{tech}</span>
               </span>
             ))}
           </div>
