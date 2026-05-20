@@ -2,11 +2,16 @@
 
 import { motion } from "framer-motion";
 
-const workflow = [
-  { label: "Inbound Ops", desc: "요청 접수 · 업무 분류" },
-  { label: "System Logic", desc: "규칙 검증 · API 처리" },
-  { label: "Data Layer", desc: "조회/적재 · 품질 체크" },
-  { label: "AX Automation", desc: "반복 업무 자동화" }
+const priorities = [
+  { title: "Operational Stability", desc: "장애 예방 중심의 운영 표준화와 모니터링 체계" },
+  { title: "Maintainable Architecture", desc: "변경에 강한 구조와 명확한 책임 분리" },
+  { title: "Practical AX Automation", desc: "반복 업무를 줄이는 단계적 자동화 적용" }
+] as const;
+
+const metrics = [
+  { label: "Enterprise Career", value: "10+ Years" },
+  { label: "Primary Domains", value: "SI · SM · ITO" },
+  { label: "Current Focus", value: "AX & AI Automation" }
 ] as const;
 
 export default function HeroSection() {
@@ -19,7 +24,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             className="text-xs tracking-[0.2em] uppercase text-cyan-300 mb-6"
           >
-            Enterprise Full Stack Developer · Transitioning toward AX & AI Automation
+            Enterprise Full Stack Developer
           </motion.p>
 
           <motion.h1
@@ -28,9 +33,9 @@ export default function HeroSection() {
             transition={{ delay: 0.05 }}
             className="text-5xl md:text-6xl xl:text-7xl font-semibold leading-[1.05] tracking-tight"
           >
-            Enterprise Experience
+            Building Reliable Systems,
             <br />
-            Evolving with AI Automation
+            Expanding with AX Automation
           </motion.h1>
 
           <motion.p
@@ -39,9 +44,9 @@ export default function HeroSection() {
             transition={{ delay: 0.1 }}
             className="mt-8 text-zinc-300 leading-8 max-w-2xl break-keep"
           >
-            10년간 SI/SM/ITO 환경에서 운영·구축·고도화를 경험한 Full Stack Developer.
-            운영 안정성, 유지보수성, 성능 최적화를 기반으로 시스템을 설계하며,
-            현재는 실무 반복 업무를 줄이는 AX 자동화 방향을 연구하고 있습니다.
+            10년 이상 엔터프라이즈 환경에서 구축·운영·고도화를 수행하며,
+            안정성과 유지보수성을 우선하는 개발 방식을 실무에 적용해 왔습니다.
+            현재는 기존 업무 프로세스에 AX 자동화를 연결해 팀 생산성을 높이는 데 집중하고 있습니다.
           </motion.p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -57,38 +62,32 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="glow-card p-6 md:p-7 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:32px_32px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(34,211,238,0.16),transparent_35%)]" />
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+          className="glow-card p-6 md:p-7"
+        >
+          <p className="text-xs tracking-[0.16em] text-zinc-400 uppercase">Core Value Focus</p>
 
-          <div className="relative">
-            <p className="text-xs tracking-[0.16em] text-zinc-400 uppercase">Enterprise Workflow Diagram</p>
-
-            <div className="mt-5 space-y-3">
-              {workflow.map((item, idx) => (
-                <div key={item.label}>
-                  <div className="glow-card p-4 md:p-5 bg-black/25 border-white/12">
-                    <p className="text-sm tracking-[0.12em] text-cyan-300 uppercase">Step {idx + 1}</p>
-                    <h3 className="mt-1.5 text-lg font-semibold text-zinc-100">{item.label}</h3>
-                    <p className="mt-1 text-sm text-zinc-400">{item.desc}</p>
-                  </div>
-                  {idx < workflow.length - 1 && (
-                    <div className="h-6 flex items-center justify-center">
-                      <span className="w-px h-5 bg-gradient-to-b from-cyan-300/70 to-transparent" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 rounded-lg border border-cyan-300/25 bg-cyan-300/10 px-4 py-3">
-              <p className="text-sm text-zinc-200 leading-6">
-                운영 중심 시스템에 자동화를 점진 적용해 <span className="text-cyan-300">안정성</span>과
-                <span className="text-cyan-300"> 생산성</span>을 동시에 확보하는 접근
-              </p>
-            </div>
+          <div className="mt-5 grid gap-3">
+            {priorities.map((item) => (
+              <article key={item.title} className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                <h3 className="text-base font-semibold text-zinc-100">{item.title}</h3>
+                <p className="mt-1.5 text-sm text-zinc-400 leading-6">{item.desc}</p>
+              </article>
+            ))}
           </div>
-        </div>
+
+          <div className="mt-6 grid sm:grid-cols-3 gap-3">
+            {metrics.map((item) => (
+              <div key={item.label} className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-3 py-3">
+                <p className="text-[11px] uppercase tracking-[0.14em] text-cyan-200/80">{item.label}</p>
+                <p className="mt-1 text-sm font-medium text-zinc-100">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
