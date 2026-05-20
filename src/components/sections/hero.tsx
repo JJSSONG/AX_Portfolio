@@ -1,22 +1,27 @@
 "use client";
+
 import { motion } from "framer-motion";
 
-const nodes = [
-  { id: "ops", x: "12%", y: "22%", label: "Ops" },
-  { id: "api", x: "48%", y: "16%", label: "API" },
-  { id: "db", x: "82%", y: "30%", label: "DB" },
-  { id: "batch", x: "20%", y: "70%", label: "Batch" },
-  { id: "ax", x: "60%", y: "78%", label: "AX" }
+const workflow = [
+  { label: "Inbound Ops", desc: "요청 접수 · 업무 분류" },
+  { label: "System Logic", desc: "규칙 검증 · API 처리" },
+  { label: "Data Layer", desc: "조회/적재 · 품질 체크" },
+  { label: "AX Automation", desc: "반복 업무 자동화" }
 ] as const;
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center">
-      <div className="section grid lg:grid-cols-2 gap-14 items-center pt-24 md:pt-28">
+      <div className="section grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 items-center pt-24 md:pt-28">
         <div>
-          <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="text-xs tracking-[0.2em] uppercase text-cyan-300 mb-6">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-xs tracking-[0.2em] uppercase text-cyan-300 mb-6"
+          >
             Enterprise Full Stack Developer · Transitioning toward AX & AI Automation
           </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,6 +32,7 @@ export default function HeroSection() {
             <br />
             Evolving with AI Automation
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,8 +40,8 @@ export default function HeroSection() {
             className="mt-8 text-zinc-300 leading-8 max-w-2xl break-keep"
           >
             10년간 SI/SM/ITO 환경에서 운영·구축·고도화를 경험한 Full Stack Developer.
-            운영 안정성, 유지보수성, 성능 최적화를 중요하게 생각하며,
-            현재는 실무 기반 AI Workflow Automation으로 생산성 확장을 연구하고 있습니다.
+            운영 안정성, 유지보수성, 성능 최적화를 기반으로 시스템을 설계하며,
+            현재는 실무 반복 업무를 줄이는 AX 자동화 방향을 연구하고 있습니다.
           </motion.p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -51,34 +57,35 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative h-[500px]">
-          <div className="absolute -inset-10 bg-cyan-500/10 blur-[100px]" />
-          <div className="glow-card h-full relative overflow-hidden p-6 md:p-8">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:34px_34px]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(34,211,238,0.16),transparent_35%)]" />
+        <div className="glow-card p-6 md:p-7 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:32px_32px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(34,211,238,0.16),transparent_35%)]" />
 
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-              <line x1="12" y1="22" x2="48" y2="16" stroke="rgba(34,211,238,0.4)" strokeWidth="0.35" />
-              <line x1="48" y1="16" x2="82" y2="30" stroke="rgba(34,211,238,0.4)" strokeWidth="0.35" />
-              <line x1="48" y1="16" x2="20" y2="70" stroke="rgba(255,255,255,0.25)" strokeWidth="0.3" />
-              <line x1="20" y1="70" x2="60" y2="78" stroke="rgba(34,211,238,0.35)" strokeWidth="0.35" />
-              <line x1="82" y1="30" x2="60" y2="78" stroke="rgba(255,255,255,0.2)" strokeWidth="0.3" />
-            </svg>
+          <div className="relative">
+            <p className="text-xs tracking-[0.16em] text-zinc-400 uppercase">Enterprise Workflow Diagram</p>
 
-            {nodes.map((node) => (
-              <div
-                key={node.id}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{ left: node.x, top: node.y }}
-              >
-                <div className="w-2.5 h-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.8)]" />
-                <p className="mt-2 text-[11px] tracking-[0.14em] text-zinc-300 uppercase">{node.label}</p>
-              </div>
-            ))}
+            <div className="mt-5 space-y-3">
+              {workflow.map((item, idx) => (
+                <div key={item.label}>
+                  <div className="glow-card p-4 md:p-5 bg-black/25 border-white/12">
+                    <p className="text-sm tracking-[0.12em] text-cyan-300 uppercase">Step {idx + 1}</p>
+                    <h3 className="mt-1.5 text-lg font-semibold text-zinc-100">{item.label}</h3>
+                    <p className="mt-1 text-sm text-zinc-400">{item.desc}</p>
+                  </div>
+                  {idx < workflow.length - 1 && (
+                    <div className="h-6 flex items-center justify-center">
+                      <span className="w-px h-5 bg-gradient-to-b from-cyan-300/70 to-transparent" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
 
-            <div className="absolute left-6 right-6 bottom-6 md:bottom-8 glow-card p-4 bg-black/25">
-              <p className="text-xs tracking-[0.16em] text-zinc-400 uppercase">Enterprise Workflow View</p>
-              <p className="mt-2 text-sm text-zinc-300 leading-6">운영 안정성 중심 시스템 위에 AI 자동화를 점진적으로 결합하는 실무형 AX 접근</p>
+            <div className="mt-5 rounded-lg border border-cyan-300/25 bg-cyan-300/10 px-4 py-3">
+              <p className="text-sm text-zinc-200 leading-6">
+                운영 중심 시스템에 자동화를 점진 적용해 <span className="text-cyan-300">안정성</span>과
+                <span className="text-cyan-300"> 생산성</span>을 동시에 확보하는 접근
+              </p>
             </div>
           </div>
         </div>
