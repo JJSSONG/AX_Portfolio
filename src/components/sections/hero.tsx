@@ -49,19 +49,27 @@ export default function HeroSection() {
             현재는 기존 업무 프로세스에 AX 자동화를 연결해 팀 생산성을 높이는 데 집중하고 있습니다.
           </motion.p>
 
-          <div className="mt-10 flex flex-wrap items-center text-zinc-500">
-            <a href="#projects" className="px-2 py-1 text-sm md:text-base text-zinc-100 hover:text-cyan-300 transition-colors">
-              View Projects
-            </a>
-            <span aria-hidden className="px-1">/</span>
-            <a href="/resume.pdf" download className="px-2 py-1 text-sm md:text-base text-zinc-100 hover:text-cyan-300 transition-colors">
-              Download Resume
-            </a>
-            <span aria-hidden className="px-1">/</span>
-            <a href="#contact" className="px-2 py-1 text-sm md:text-base text-zinc-100 hover:text-cyan-300 transition-colors">
-              Contact
-            </a>
-          </div>
+          <nav className="mt-10" aria-label="Primary actions">
+            <ul className="flex flex-wrap items-center gap-y-2 text-zinc-500">
+              <li className="inline-flex items-center">
+                <a href="#projects" className="inline-flex items-center px-3 py-1.5 text-sm md:text-base text-zinc-100 hover:text-cyan-300 transition-colors">
+                  View Projects
+                </a>
+                <span aria-hidden className="mx-1.5">/</span>
+              </li>
+              <li className="inline-flex items-center">
+                <a href="/resume.pdf" download className="inline-flex items-center px-3 py-1.5 text-sm md:text-base text-zinc-100 hover:text-cyan-300 transition-colors">
+                  Download Resume
+                </a>
+                <span aria-hidden className="mx-1.5">/</span>
+              </li>
+              <li className="inline-flex items-center">
+                <a href="#contact" className="inline-flex items-center px-3 py-1.5 text-sm md:text-base text-zinc-100 hover:text-cyan-300 transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <motion.div
