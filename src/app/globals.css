@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07090d;
+  --background-secondary: #0b0f17;
+  --card: #111318;
+  --border: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --accent-cyan: #22d3ee;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(34,211,238,0.12), transparent 30%),
+    radial-gradient(circle at 88% 20%, rgba(139,92,246,0.12), transparent 35%),
+    var(--background);
+  color: var(--text-primary);
+  font-family: "Pretendard", "Inter", sans-serif;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 110px 24px;
+}
+
+.glow-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  transition: all .25s ease;
+}
+.glow-card:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 20px 60px rgba(34, 211, 238, 0.08);
+  transform: translateY(-2px);
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
